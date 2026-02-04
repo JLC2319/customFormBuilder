@@ -9,11 +9,236 @@ import "../styles/global.css";
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>Custom Form Builder</title>
   </head>
-  <body class="flex flex-col">
-    <h1 class="text-center text-2xl">Welcome to Prototype app</h1>
-    <a href="/form-viewer" class="text-center w-full">Go to Form Viewer</a>
-    <a href="/form-builder" class="text-center w-full">Go to Form Builder</a>
+  <body>
+    <div class="home-container">
+      <div class="home-content">
+        <div class="hero-section">
+          <h1>Custom Form Builder</h1>
+          <p class="subtitle">Create, manage, and fill out custom forms with ease</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">📝</div>
+            <h2>Form Builder</h2>
+            <p>Create custom forms with multiple field types including text, numbers, dates, and more.</p>
+            <a href="/form-builder" class="btn-primary">Go to Form Builder</a>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">✅</div>
+            <h2>Form Viewer</h2>
+            <p>Fill out forms, save responses, and manage your submissions all in one place.</p>
+            <a href="/form-viewer" class="btn-primary">Go to Form Viewer</a>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h3>Supported Field Types</h3>
+          <div class="field-types">
+            <span class="badge">String</span>
+            <span class="badge">Number</span>
+            <span class="badge">Boolean</span>
+            <span class="badge">Date</span>
+            <span class="badge">Select</span>
+            <span class="badge">Measurement</span>
+            <span class="badge">File</span>
+            <span class="badge">Location</span>
+            <span class="badge">Photo</span>
+            <span class="badge">RFI</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+
+  .home-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .home-content {
+    max-width: 1000px;
+    width: 100%;
+  }
+
+  .hero-section {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeInDown 0.8s ease-out;
+  }
+
+  .hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: white;
+    margin: 0 0 1rem 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+  }
+
+  .feature-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .feature-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature-card h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #374151;
+    margin: 0 0 1rem 0;
+  }
+
+  .feature-card p {
+    color: #6b7280;
+    line-height: 1.6;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 0.875rem 2rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+  }
+
+  .info-section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    animation: fadeIn 0.8s ease-out 0.4s both;
+  }
+
+  .info-section h3 {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .field-types {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+  }
+
+  .badge {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .badge:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-section h1 {
+      font-size: 2.5rem;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+      padding: 2rem;
+    }
+  }
+</style>
